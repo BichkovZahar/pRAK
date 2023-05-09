@@ -4,7 +4,8 @@ class School:
     def __init__(self , name , students):
         self.name = name
         self.students = students
-        self.teachers = []                          #список студентів
+        self.teachers = []#1
+        self.clas = [] #2          #список студентів
     def admit_student(self , student): #додавання студентів
         self.students.append(student)
         print(f"{student.name} був доданий до школи {self.name}")  #дописати
@@ -18,13 +19,17 @@ class School:
     def add_teacher(self , teacher):
         self.teachers.append(teacher)
         print(f"{teacher.name} був доданий до школи {self.name}")
+    def add_class (self , class_obj):
+        self.clas.append()
+
+
 
 class Teacher:
     def __init__(self , name , subjekt , clas):
         self.name = name
         self.subjekt = subjekt
         self.clas = clas
-    
+
 class Student:
     def __init__(self , name , grade):
         self.name = name
@@ -37,6 +42,12 @@ class Student:
         print(f"{self.name} був понижений {self.grade}")
     def __str__(self):
         return f"{self.name} - Ранг {self.grade}"   #додали метод виводу
+class Clas:
+    def __init__(self , number , student1):
+        self.student1 = student1
+        self.number = number
+    def add_student(self , student):
+        self.student = student
 
 
 lisa = Student("Alisa" , 6)
